@@ -1,0 +1,67 @@
+<div class="grid__item">
+  {% if settings.section_A %}
+    {% include 'section_A' %}
+  {% endif %}
+
+  {% if settings.section_B %}
+    {% include 'section_B' %}
+  {% endif %}
+
+  {% if settings.section_C %}
+    {% include 'section_C' %}
+  {% endif %}
+
+  {% if settings.section_D %}
+    {% include 'section_D' %}
+  {% endif %}
+
+  {% if settings.section_I %}
+    {% include 'section_I' %}
+  {% endif %}
+
+  {% if settings.section_J %}
+    {% include 'section_J' %}
+  {% endif %}
+
+  {% if settings.section_E %}
+    {% include 'section_E' %}
+  {% endif %}
+
+  {% if settings.section_F %}
+    {% include 'section_F' %}
+  {% endif %}
+
+  {% if settings.section_G %}
+    {% include 'section_G' %}
+  {% endif %}
+
+  {% if settings.section_H %}
+    {% include 'section_H' %}
+  {% endif %}
+</div>
+
+{% comment %}
+{% if settings.home_section_1 != blank %}
+  {% include settings.home_section_1 %}
+{% endif %}
+
+{% if settings.home_section_2 != blank %}
+  <hr class="hr--clear hr--small">
+  {% include settings.home_section_2 %}
+{% endif %}
+
+{% if settings.home_section_3 != blank %}
+  <hr class="hr--clear hr--small">
+  {% include settings.home_section_3 %}
+{% endif %}
+
+{% if settings.home_section_4 != blank %}
+  <hr class="hr--clear hr--small">
+  {% include settings.home_section_4 %}
+{% endif %}
+
+{% if settings.home_section_5 != blank %}
+  <hr class="hr--clear hr--small">
+  {% include settings.home_section_5 %}
+{% endif %}
+{% endcomment %}

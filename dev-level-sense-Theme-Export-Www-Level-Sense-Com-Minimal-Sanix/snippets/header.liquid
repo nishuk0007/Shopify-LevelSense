@@ -1,0 +1,116 @@
+<header class="site-header small--hide" role="banner">
+    <div class="wrapper">
+      
+      {% if settings.nav_below_logo %}
+
+      <div class="grid--full">
+        <div class="grid__item">
+          {% if template == 'index' %}
+            <h1 class="site-header__logo{% if settings.left_aligned_logo %} post-large--left{% endif %}" itemscope itemtype="http://schema.org/Organization">
+          {% else %}
+            <div class="h1 site-header__logo{% if settings.left_aligned_logo %} post-large--left{% endif %}" itemscope itemtype="http://schema.org/Organization">
+          {% endif %}
+            {% if settings.logo_use_image %}
+              <a href="/" itemprop="url">
+                <img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
+              </a>
+            {% else %}
+              <a href="/" itemprop="url">{{ shop.name }}</a>
+            {% endif %}
+          {% if template == 'index' %}
+            </h1>
+          {% else %}
+            </div>
+          {% endif %}
+          {% if settings.header_message != blank %}
+            <p class="header-message post-large--hide">
+              <small>{{ settings.header_message }}</small>
+            </p>
+          {% endif %}
+        </div>
+      </div>
+      <div class="grid--full medium-down--hide">
+        <div class="grid__item">
+          {% include 'site-nav' %}
+        </div>
+      </div>
+      
+      {% else %}
+  
+<!--     Display on only large device   -->
+     <div class="large--show medium--hide small--hide">
+
+      <div class="grid--full post-large--display-table">
+        <div class="grid__item post-large--one-quarter post-large--display-table-cell imagepadding">
+          {% if template == 'index' %}
+            <h1 class="site-header__logo post-large--left" itemscope itemtype="http://schema.org/Organization">
+          {% else %}
+            <div class="h1 site-header__logo post-large--left" itemscope itemtype="http://schema.org/Organization">
+          {% endif %}
+            {% if settings.logo_use_image %}
+              <a href="/" itemprop="url">
+                <img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
+              </a>
+            {% else %}
+              <a href="/" itemprop="url">{{ shop.name }}</a>
+            {% endif %}
+          {% if template == 'index' %}
+            </h1>
+          {% else %}
+            </div>
+          {% endif %}
+          {% if settings.header_message != blank %}
+            <p class="header-message post-large--hide">
+              <small>{{ settings.header_message }}</small>
+            </p>
+          {% endif %}
+        </div>
+        <div class="grid__item post-large--three-quarters post-large--display-table-cell imagepadding">
+          {% include 'site-nav' %}
+        </div>
+      </div>
+      
+       </div>
+<!--     Display on only medium device   -->
+      <div class="large--hide medium--show small--hide">
+        
+      <div class="grid--full">
+        <div class="grid__item">
+          {% if template == 'index' %}
+            <h1 class="site-header__logo{% if settings.left_aligned_logo %} post-large--left{% endif %}" itemscope itemtype="http://schema.org/Organization">
+          {% else %}
+            <div class="h1 site-header__logo{% if settings.left_aligned_logo %} post-large--left{% endif %}" itemscope itemtype="http://schema.org/Organization">
+          {% endif %}
+            {% if settings.logo_use_image %}
+              <a href="/" itemprop="url">
+                <img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
+              </a>
+            {% else %}
+              <a href="/" itemprop="url">{{ shop.name }}</a>
+            {% endif %}
+          {% if template == 'index' %}
+            </h1>
+          {% else %}
+            </div>
+          {% endif %}
+          {% if settings.header_message != blank %}
+            <p class="header-message post-large--hide">
+              <small>{{ settings.header_message }}</small>
+            </p>
+          {% endif %}
+        </div>
+      </div>
+      <div class="grid--full">
+        <div class="grid__item">
+          {% include 'site-nav' %}
+        </div>
+      </div>
+      
+      </div>
+      
+      {% endif %}
+
+    </div>
+  </header>
+
+ 

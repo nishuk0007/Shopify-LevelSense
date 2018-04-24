@@ -1,0 +1,40 @@
+{% assign index = 0 %}
+
+{% if settings.show_promo_image_1 %}{% assign index = index | plus: 1 %}{% endif %}
+{% if settings.show_promo_image_2 %}{% assign index = index | plus: 1 %}{% endif %}
+{% if settings.show_promo_image_3 %}{% assign index = index | plus: 1 %}{% endif %}
+{% if settings.show_promo_image_4 %}{% assign index = index | plus: 1 %}{% endif %}
+
+{% case index %}
+  {% when 1 %}
+    {% assign promo_image_width = 'one-whole' %}
+  {% when 2 %}
+    {% assign promo_image_width = 'one-half' %}
+  {% when 3 %}
+    {% assign promo_image_width = 'small--one-whole one-third' %}
+  {% when 4 %}
+    {% assign promo_image_width = 'small--one-whole medium--one-half one-quarter' %}
+{% endcase %}
+
+{% unless index == 0 %}
+
+<div class="grid-uniform promo-images">
+
+  {% for i in (1..4) %}
+    {% capture promo_image %}promo_image_{{ i }}.jpg{% endcapture %}
+    {% capture promo_image_link %}promo_image_{{ i }}_link{% endcapture %}
+    {% capture promo_image_alt %}promo_image_{{ i }}_alt{% endcapture %}
+    {% capture show_promo_image %}show_promo_image_{{ i }}{% endcapture %}
+
+    {% if settings[show_promo_image] %}
+    <div class="grid__item {{ promo_image_width }}">
+      <a href="{{ settings[promo_image_link] }}">
+        <img src="{{ promo_image | asset_url }}" alt="{{ settings[promo_image_alt] | escape }}" />
+      </a>
+    </div>
+    {% endif %}
+
+  {% endfor %}
+</div>
+
+{% endunless %}

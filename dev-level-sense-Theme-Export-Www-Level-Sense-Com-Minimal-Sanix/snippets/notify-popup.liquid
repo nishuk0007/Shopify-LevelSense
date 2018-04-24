@@ -1,0 +1,199 @@
+<div id="lightbox-notifypopup">
+  <div class="grid">
+    <div class="grid__item">
+      <!-- Tab panes -->
+      <div class="tab-content mt30">
+        <div class="tab-pane fade" id="notifypopup">
+          <div class="notify-head" id="notify-head">
+            <h3>Alarm Contacts</h3>
+          </div>
+          
+          <section>
+            <div class="accordion">
+              <ul>
+              </ul>
+          </div>								
+        
+         </section>
+              
+          <div class="row new-contact sms-type" id="new-contact">
+            <h4>
+              Add New Contact
+            </h4>
+            <form id="contact-name">
+            <div class="row">
+              <div class="column width-12">
+                <input type="text" class="form-control" id="contact_name" name="contact_name" placeholder="New Contact - Click to edit name">
+              </div>
+            </div>
+            <div class="column width-4">
+              <div class="form-group">
+                <h5><label for="contact_type">Select Notification Type</label></h5>
+                <select class="form-control" id="contact_type" name="select_contact">
+                  <option value="">Select Type</option>
+                  <option value="#contact_email">Email</option>
+                  <option value="#text_msg">Text Message</option>
+                  <option value="#voice">Voice</option>
+                </select>
+              </div>
+            </div>
+            </form>
+            
+            <form id="contact_email" class="column width-8">
+              <div class="form-group">
+                <h5><label for="email_address">Email Address</label></h5>
+                <input type="email" class="form-control" id="email_address_id" name="email" placeholder="Enter your email">
+              </div>
+            </form> 
+            
+
+            <form id="text_msg" class="column width-8">
+              <div class="row">
+                <div class="column width-6">
+                  <div class="form-group">
+                    <h5><label for="mobile">Cell Phone Number</label></h5>
+                    <input type="text" class="form-control" id="mobile" name="contact_mobile" placeholder="+1 1234567890">
+                    <span class='help-block'>* Use country code before number</span>
+                  </div>
+                </div>
+
+                <div class="column width-6">
+                  <div class="form-group">
+                    <h5><label for="service_provider">Service Provider</label></h5>
+                    <select class="form-control" id="service_provider">
+                        <option value="">Select your Cellular Provider </option>
+                    </select>
+                  </div>
+                </div>
+          	   </div>
+            </form>
+            
+            <form id="voice" class="column width-8">
+              <div class="row">
+                <div class="column width-6">
+                  <div class="form-group">
+                    <h5><label for="mobile_voice">Cell Phone Number</label></h5>
+                    <input type="text" class="form-control" id="mobile_voice" name="contact_mobile_voice" placeholder="+1 1234567890">
+<!--                   	<input type="text" class="form-control text-mobile" id="mobile_voice" name="contact_mobile_voice" placeholder="Do not use dashes"> -->
+					<span class='help-block'>* Use country code before number</span>
+                  </div>
+                </div>
+
+                <div class="column width-6">
+                  <div class="form-group">
+                    <h5><label for="service_provider_voice">Service Provider</label></h5>
+                    <select class="form-control" id="service_provider_voice">
+                        <option value="">Select your Cellular Provider </option>
+                    </select>
+                  </div>
+                </div>
+          	   </div>
+            </form>
+            
+            <script>
+              
+              $('#contact_email').validate({
+                errorElement: 'span',
+                rules: {
+                  email: {
+                    required: true,
+                    pattern: "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[A-Z]{2}|com|org|net|edu|gov|mil|biz|info|mobi|name|aero|asia|jobs|museum|in)"
+                  },
+                },
+                messages: {
+                  email: {
+                    required: "Please enter email",
+                    pattern: "Please enter a valid email address"
+                  },
+                }
+              });
+              
+              $('#text_msg').validate({
+                errorElement: 'span',
+                rules: {
+                  contact_mobile: {
+                    pattern: /^(1[ \-\+]{0,3}|\+1[ -\+]{0,3}|\+1|\+)?((\(\+?1-[2-9][0-9]{1,2}\))|(\(\+?[2-8][0-9][0-9]\))|(\(\+?[1-9][0-9]\))|(\(\+?[17]\))|(\([2-9][2-9]\))|([ \-\.]{0,3}[0-9]{2,4}))?([ \-\.][0-9])?([ \-\.]{0,3}[0-9]{2,4}){2,3}$/,
+                    required: true,
+//                     number: true,
+                    minlength:10,
+  					maxlength:15,
+                  },
+                },
+                messages: {
+                  contact_mobile: {
+                    required: "Please enter mobile number",
+//                     number: "Please enter number only"
+                    pattern: "Please enter number with country code",
+                    minlength:"Please enter atleast 10 digits",
+                    maxlength:"Please do not enter more than 15 digits"
+                  },
+                }
+              });
+              $('#contact-name').validate({
+                errorElement: 'span',
+                rules: {
+                  select_contact: {
+                    required: true,
+                  },
+                  contact_name: {
+                    required: true
+                  },
+                },
+                messages: {
+                  select_contact: {
+                    required: "Please select notification type"
+                  },
+                  contact_name: {
+                    required: "Please enter name first"
+                  },
+                }
+              });
+              $('#voice').validate({
+                errorElement: 'span',
+                rules: {
+                  contact_mobile_voice: {
+                    pattern: /^(1[ \-\+]{0,3}|\+1[ -\+]{0,3}|\+1|\+)?((\(\+?1-[2-9][0-9]{1,2}\))|(\(\+?[2-8][0-9][0-9]\))|(\(\+?[1-9][0-9]\))|(\(\+?[17]\))|(\([2-9][2-9]\))|([ \-\.]{0,3}[0-9]{2,4}))?([ \-\.][0-9])?([ \-\.]{0,3}[0-9]{2,4}){2,3}$/,
+                    required: true,
+//                     number: true,
+                    minlength:10,
+  					maxlength:15,
+                  },
+                },
+                messages: {
+                  contact_mobile_voice: {
+                    required: "Please enter mobile no",
+//                     number: "Please enter number only",
+                    pattern: "Please enter number with country code",
+                    minlength:"Please enter atleast 10 digits",
+                    maxlength:"Please do not enter more than 15 digits"                  },
+                }
+              }); 
+              
+            </script>
+            
+            <div class="row">
+              <div class="column width-6 pd-none">
+                <div class="chckbox" id="create_contact_enabled">
+                  <input type="checkbox" id="contact_enabled" checked="checked"> 
+                  <span id="create_contact_en"><i class="fa fa-check"></i></span>Enable
+                </div>
+              </div>
+              <div class="column width-6 text-right test-email-sms">
+                <button class= "btn btn-primary test-email-contact-btn create-contact" id="test_email">Test Email</button>
+                <button class= "btn btn-primary test-sms-contact-btn" id="test_sms">Test Sms</button>
+              	<button class="btn btn-primary notify-btn create_contact">Save</button>
+              </div>
+            </div>
+                         
+          </div>
+          
+          <div class="row text-center">
+            <button class="btn btn-primary notify-add-btn">Add Contact</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

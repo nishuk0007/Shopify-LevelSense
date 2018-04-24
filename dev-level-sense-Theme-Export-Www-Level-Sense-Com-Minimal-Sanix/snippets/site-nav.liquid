@@ -1,0 +1,95 @@
+{% comment %}
+  List out your main-menu-copy linklist (default)
+
+  More info on linklists:
+    - http://docs.shopify.com/themes/liquid-variables/linklists
+{% endcomment %}
+<ul class="site-nav{% unless settings.nav_below_logo %} post-large--text-right{% endunless %}" id="AccessibleNav">
+  {% for link in linklists.main-menu.links %}
+    {% comment %}
+      Create a dropdown menu by naming a linklist the same as a link in the parent nav
+
+      More info on dropdowns:
+        - http://docs.shopify.com/manual/your-website/navigation/create-drop-down-menu
+    {% endcomment %}
+    {% assign child_list_handle = link.title | handleize %}
+    {% if linklists[child_list_handle].links != blank %}
+      <li class="site-nav--has-dropdown{% if link.active %} site-nav--active{% endif %}" aria-haspopup="true">
+        <a href="{{ link.url }}" class="site-nav__link">
+          {{ link.title }}
+          <span class="icon-fallback-text">
+            <span class="icon icon-arrow-down" aria-hidden="true"></span>
+          </span>
+        </a>
+        <ul class="site-nav__dropdown">
+          {% for childlink in linklists[child_list_handle].links %}
+            <li{% if childlink.active %} class="site-nav--active"{% endif %}>
+              <a href="{{ childlink.url }}" class="site-nav__link">{{ childlink.title | escape }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% else %}
+      <li {% if link.active %}class="site-nav--active"{% endif %}>
+        <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
+
+  {% comment %}
+  If customer accounts are enabled, provide login and create account links
+  {% endcomment %}
+  
+  {% if shop.customer_accounts_enabled %}
+    <li class="dropdown">
+      {% if customer %}
+        <a href="/account">Welcome,</a>
+        <span>{{ customer.first_name }}</span>
+        <ul class="dropdown-content">
+          <li class="level-1 account-details-link"><a href="/account">Account Details</a></li>
+          <li class="level-1">{{ 'Log Out' | customer_logout_link }}</li>
+        </ul>
+      {% else %}
+        {{ 'ACCOUNT' | customer_login_link }}
+        <ul class="dropdown-content">
+          <li class="level-1 login-link">{{ 'Login' | customer_login_link }} </li>
+          <li class="level-1 register-link">{{ 'Register' | customer_register_link }}</li>
+        </ul>
+      {% endif %}
+    </li> 
+  		
+<!--           <li class="dropdown">
+            <a class="dropbtn">Account</a>
+            <div class="dropdown-content">
+              <a href="#">Login</a>
+              <a href="#" style="display: none;">LogOut</a>
+              <a href="#">Register</a>
+            </div>
+          </li> -->
+        
+  {% endif %}
+  
+  <li  class="Buy_Now">
+    {%comment%}
+  		{% for product in collections.pro.products %}
+        <form method="post" action="/cart/add">
+          <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+          <input type="submit" value="Buy now" class="btn" />
+        </form>  
+      	{% endfor %}
+    	{%endcomment%}
+      <a href="//www.level-sense.com/cart/19130226758:{% if cart.item_count > 0 %}{% for item in cart.items %}{{item.quantity}}{%endfor%}{% else %}1{% endif %}">
+      <button type="submit" class="btn">
+         <span>Buy Now</span>
+      </button>
+      </a>
+    
+  </li>
+  <li class="CART">
+    <a href="/cart" class="cart-page-link mobile-cart-page-link site-nav__link">
+      <span class="icon icon-cart header-bar__cart-icon hide" aria-hidden="true"></span>
+      <img src="{{ 'cart-icon.png' | asset_url}}"/>
+      <span class="cart-count{% if cart.item_count == 0 %} hidden-count{% endif %}"> {{ cart.item_count }}</span>
+    </a>
+  </li>
+</ul>

@@ -1,0 +1,249 @@
+<div id="lightbox-edit-device-alarm">
+   <div class="tabs">
+      <div class="tab-panes">
+         <div id="alarm-configuration" class="active">
+           	<div class="grid__item large--one no-pd alarm-head">
+	            <h3>Alarm Configuration</h3>	
+          	</div>
+            <div class="tab-content">
+
+               <form id="edit_device_form_part2">
+                  <div class="grid" id="water_level_container" style="display: none;">
+                     <div class="grid__item">
+                        <p>Water Level: <span id="current_water_level"></span>%</p>
+                        <p id="water_calibrate"></p>
+                       	<input type="hidden" name="device_id" id="form_device_id">
+                       <p>Pump Cycles: <span class="" id="pump_cycle"></span></p>
+                     </div>
+                     <hr>
+                  </div>
+
+
+                  <div class="grid" id="temperature_container" style="display: none;">
+                     <div class="grid__item">
+<!--                        <p>Current Temperature: <span id="current_temperature"></span><span class="percent"> &#x2109; </span></p> -->
+                      <ul class="current-temp">
+                         <li class="grid__item large--one-quarter medium--one-third"><p>Temperature:</p></li>
+                         <li class="grid__item large--one-quarter medium--one-third">
+                             <div id="temp_in_f" ><span id="current_temperature_in_f"></span>
+                                <span class="percent"> &#176;<strong class="display_unit">F</strong> </span>
+                         	 </div>
+                             <div id="temp_in_c"><span id="current_temperature_in_c"></span>
+                                <span class="percent"> &#176;<strong class="display_unit">C</strong> </span>
+                         	 </div>
+                         </li>
+                         <li class="grid__item large--one-half medium--one-third">
+                           <div class="">
+                        	<select class="form-control" name="current_temperature" id="current_temperature">
+<!--                                 <option value="fahrenheit">Temperature in Fahrenheit (default)</option>
+                              	<option value="celsius" >Temperature in Celsius</option> -->
+                          	</select>
+                          		<a href="#" class="tooltipmain tool-tip" title="006" data-tipped-options="position: 'top'">?</a>
+                           </div>
+                         </li>
+                           
+                      </ul>
+                      </div>
+                       	 
+                    
+                     <div class="grid__item large--one-half no-pd">
+                        <div class="form-group">
+                           <input type="number" class="form-control" min="10" max="90" placeholder="Min" name="temperature_lcl" id="temperature_min">
+                        </div>
+                        <a href="#" class="tooltipmain tool-tip" title="007" data-tipped-options="position: 'top'">?</a>
+                     </div>
+                     <div class="grid__item large--one-half">
+                        <div class="form-group">
+                           <input type="number" class="form-control" min="10" max="90" placeholder="Max" name="temperature_ucl" id="temperature_max">
+                        </div>
+                        <a href="#" class="tooltipmain tool-tip" title="008" data-tipped-options="position: 'top'">?</a>
+                     </div>
+
+                     <div class="grid__item chckbox">
+                        <input type="checkbox" name="temperature_relay" id="temperature_relay" value="">
+                        <span name= "temp_relay"><i class="fa fa-check"></i></span> RELAY
+
+                        <input type="checkbox" name="temperature_siren" id="temperature_siren" value="">
+                        <span name= "temp_siren"><i class="fa fa-check"></i></span> SIREN
+
+                        <input type="checkbox" name="temperature_email" id="temperature_email" value="">
+                        <span name= "temp_email"><i class="fa fa-check"></i></span> EMAIL
+                       	
+                       <input type="checkbox" name="temperature_text" id="temperature_text" value="">
+                        <span name= "temp_text"><i class="fa fa-check"></i></span> TEXT
+                       
+                       <input type="checkbox" name="temperature_voice" id="temperature_voice" value="">
+                        <span name= "temp_voice"><i class="fa fa-check"></i></span> VOICE
+                     </div>
+                     <hr>
+                  </div>
+
+
+                  <div class="grid" id="humidity_container" style="display: none;">
+                     <div class="grid__item">
+                       <p>Relative Humidity: <span id="current_humidity"></span> <span class="percent">%</span> </p>
+                     </div>
+                     <div class="grid__item large--one-half no-pd">
+                        <div class="form-group">
+                           <input type="number" class="form-control" min="0" max="100" name="humidity_lcl" id="humidity_min" placeholder="Min">
+                        </div>
+                        <a href="#" class="tooltipmain tool-tip" title="009" data-tipped-options="position: 'top'">?</a>
+                     </div>
+                     <div class="grid__item large--one-half">
+                        <div class="form-group">
+                           <input type="number" class="form-control" min="0" max="100" name="humidity_ucl" id="humidity_max" placeholder="Max">
+                        </div>
+                        <a href="#" class="tooltipmain tool-tip" title="010" data-tipped-options="position: 'top'">?</a>
+                     </div>
+
+                     <div class="grid__item chckbox">
+                       
+                        <input type="checkbox" name="humidity_relay" id="humidity_relay" value="">
+                        <span name="hum_relay"><i class="fa fa-check"></i></span> RELAY
+
+                        <input type="checkbox" name="humidity_siren" id="humidity_siren" value="">
+                        <span name="hum_siren"><i class="fa fa-check"></i></span> SIREN
+
+                        <input type="checkbox" name="humidity_email" id="humidity_email" value="">
+                        <span name="hum_email"><i class="fa fa-check"></i></span> EMAIL
+                       
+                       <input type="checkbox" name="humidity_text" id="humidity_text" value="">
+                        <span name="hum_text"><i class="fa fa-check"></i></span> TEXT
+                       
+                       <input type="checkbox" name="humidity_voice" id="humidity_voice" value="">
+                        <span name="hum_voice"><i class="fa fa-check"></i></span> VOICE
+                     </div>
+                     <hr>
+                  </div>
+
+
+                  <div class="grid" id="power_container" style="display: none;">
+                     <div class="grid__item">
+                       <p>Power Good: <span id="power_label"></span><span class="percent"></span></p>
+                     </div>
+
+                     <div class="grid__item chckbox">
+                        <input type="checkbox" name="power_relay" id="power_relay" value="">
+                        <span name="pow_relay"><i class="fa fa-check"></i></span> RELAY
+
+                        <input type="checkbox" name="power_siren" id="power_siren" value="">
+                        <span name="pow_siren"><i class="fa fa-check"></i></span> SIREN
+
+                        <input type="checkbox" name="power_email" id="power_email" value="">
+                        <span name="pow_email"><i class="fa fa-check"></i></span> EMAIL
+                        
+                       <input type="checkbox" name="power_text" id="power_text" value="">
+                        <span name="pow_text"><i class="fa fa-check"></i></span> TEXT
+                        
+                       <input type="checkbox" name="power_voice" id="power_voice" value="">
+                        <span name="pow_voice"><i class="fa fa-check"></i></span> VOICE
+                     </div>
+                     <hr>
+                  </div>
+
+
+                  <div class="grid" id="leak_sensor_container" style="display: none;">
+                    <div class="grid__item large--one-quarter medium--one-third">
+                      <input type="text" class="form-control" name="leak_sensor_label" id="leak_sensor_name" value="Leak Sensor">
+                    </div>
+                    <div class="grid__item large--one-quarter medium--one-third">
+                      <p>: <span id="leak_sensor_label" class="percent"></span> </p> 
+                    </div>
+                    <div class="grid__item large--one-half medium--one-third">
+                      <div class="form-group">
+                        <select class="form-control" name="leak_sensor" id="leak_sensor_dropdown">
+                          <option value="close">Alarm When Closed (default)</option>
+                          <option value="open">Alarm When Open</option>
+                        </select>
+                      </div>
+                      <a href="#" class="tooltipmain tool-tip" title="011" data-tipped-options="position: 'top'">?</a>
+                    </div>
+
+                     <div class="grid__item chckbox">
+                        <input type="checkbox" name="leak_sensor_relay" id="leak_sensor_relay" value="">
+                        <span name="leak_relay"><i class="fa fa-check"></i></span> RELAY
+
+                        <input type="checkbox" name="leak_sensor_siren" id="leak_sensor_siren" value="">
+                        <span name="leak_siren"><i class="fa fa-check"></i></span> SIREN
+
+                        <input type="checkbox" name="leak_sensor_email" id="leak_sensor_email" value="">
+                        <span name="leak_email"><i class="fa fa-check"></i></span> EMAIL
+                       	
+                       <input type="checkbox" name="leak_sensor_text" id="leak_sensor_text" value="">
+                        <span name="leak_text"><i class="fa fa-check"></i></span> TEXT
+                       	
+                       <input type="checkbox" name="leak_sensor_voice" id="leak_sensor_voice" value="">
+                        <span name="leak_voice"><i class="fa fa-check"></i></span> VOICE
+                     </div>
+                     <hr>
+                  </div>
+
+
+                  <div class="grid" id="float_switch_container" style="display: none;">
+<!--                      <div class="grid__item">
+                       
+                       <input type="text" class="form-control" name="leak_sensor_label" id="float_switch_label" value="Float Switch">
+                    		<p>: <span id="float_switch_label" class="percent">Open</span> </p> 
+                    </div>
+                     <div class="grid__item large--one-half push--large--one-quarter">
+                        <div class="form-group">
+                           <select class="form-control" name="float_switch" id="float_switch">
+                              <option value="close">Alarm When Closed (default)</option>
+                              <option value="open">Alarm When Open</option>
+                           </select>
+                        </div>
+                        <a href="#" class="tooltipmain tool-tip" title="012" data-tipped-options="position: 'top'">?</a>
+                     </div> -->
+
+                    	<div class="grid__item large--one-quarter medium--one-third">
+                      <input type="text" class="form-control" name="float_switch_label" id="float_switch_name" value="Float Switch">
+                    </div>
+                    	<div class="grid__item large--one-quarter medium--one-third">
+                      <p>: <span id="float_switch_label" class="percent"></span> </p> 
+                    </div>
+                    	<div class="grid__item large--one-half medium--one-third">
+                      <div class="form-group">
+                        <select class="form-control" name="float_switch" id="float_switch_dropdown">
+                          <option value="close">Alarm When Closed (default)</option>
+                          <option value="open">Alarm When Open</option>
+                        </select>
+                      </div>
+                      <a href="#" class="tooltipmain tool-tip" title="011" data-tipped-options="position: 'top'">?</a>
+                    </div>
+                    	<div class="grid__item chckbox">
+                        <input type="checkbox" name="float_switch_relay" id="float_switch_relay" value="">
+                        <span name="float_relay"><i class="fa fa-check"></i></span> RELAY
+
+                        <input type="checkbox" name="float_switch_siren" id="float_switch_siren" value="">
+                        <span name="float_siren"><i class="fa fa-check"></i></span> SIREN
+
+                        <input type="checkbox" name="float_switch_email" id="float_switch_email" value="">
+                        <span name="float_email"><i class="fa fa-check"></i></span> EMAIL
+                       	
+                       <input type="checkbox" name="float_switch_text" id="float_switch_text" value="">
+                        <span name="float_text"><i class="fa fa-check"></i></span> TEXT
+                       	
+                       <input type="checkbox" name="float_switch_voice" id="float_switch_voice" value="">
+                        <span name="float_voice"><i class="fa fa-check"></i></span> VOICE
+                     </div>
+                    
+                    </div>
+                 
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+   <button class="btn btn-primary edit-device-info-alarm">Submit</button>
+</div>
+
+{{ 'core.min.css' | asset_url | stylesheet_tag }}
+{{ 'timber.master.min.js' | asset_url | script_tag }}
+
+<style>
+  .tab-panes .tab-content > form{
+  	display: block !important;
+  }
+
+</style>
+

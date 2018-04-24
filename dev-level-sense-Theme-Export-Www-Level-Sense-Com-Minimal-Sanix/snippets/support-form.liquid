@@ -1,0 +1,96 @@
+<!-- CONTACT FORM -->
+{% form 'contact' %}
+
+<!-- CONTACT FORM CONFIRMATION -->
+{% if form.posted_successfully? %}
+<p class="alert alert-success">
+	Thanks for contacting us! We'll get back to you as soon as possible.
+</p>
+{% endif %}
+
+<!-- CONTACT FORM ERROR -->
+{% if form.errors %}
+<p class="alert alert-danger">
+	<!-- {{ form.errors.size }} or {{ form.errors | size }} -->
+	Oops, sorry. We were unable to submit your inquiry because it contained {{ form.errors | size | pluralize: 'an error', 'a few errors' }}. Please correct the following and submit again:<br>
+	{% for field in form.errors %}
+	The {{ field | capitalize | replace: 'Body', 'Message' }} field {{ form.errors.messages[field] }}.
+	{% endfor %}
+</p>
+{% endif %}
+		
+<!-- CONTACT FORM INPUTS -->
+
+	<div class="grid-uniform">
+  
+        <div class="grid__item large--one-half medium--one-whole small--one-whole">
+        <label for="ContactFormName" class="">First Name</label>
+        <input type="text" id="ContactFormName" name="contact[First Name]" placeholder="" autocapitalize="words" value="">
+        </div>
+
+        <div class="grid__item large--one-half medium--one-whole small--one-whole">
+        <label for="ContactFormName" class="">Last Name</label>
+        <input type="text" id="ContactFormName" name="contact[Last Name]" placeholder="" autocapitalize="words" value="">
+        </div>
+
+        <div class="grid__item large--one-half medium--one-whole small--one-whole">
+        <label for="ContactFormEmail" class="">{{ 'contact.form.email' | t }}</label>
+        <input type="email" id="ContactFormEmail" name="contact[email]" placeholder="" autocorrect="off" autocapitalize="off" value="">
+        </div>
+
+        <div class="grid__item large--one-half medium--one-whole small--one-whole">
+        {% assign name_attr = 'contact.form.phone' | t | handle %}
+        <label for="ContactFormPhone" class="">{{ 'contact.form.phone' | t }}</label>
+        <input type="tel" id="ContactFormPhone" name="contact[{{ name_attr }}]" placeholder="" pattern="[0-9\-]*" value="">
+        </div>
+
+        <div class="grid__item large--one-half medium--one-whole small--one-whole">
+        <label for="ContactFormDevice" class="">Device</label>
+        <select id="ContactFormDevice" name="contact[Device]">
+          <option>Pro</option>
+          <option>Micro</option>
+        </select>
+        </div>
+
+        <div class="grid__item large--one-half medium--one-whole small--one-whole">
+        <label for="ContactFormMessage" class="">Issue</label>
+        <textarea rows="3" id="ContactFormMessage" name="contact[body]" placeholder="">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+        </div>
+
+        <div class="grid__item large--one-half medium--one-whole small--one-whole">
+        <label class="" for="contactFormAddress">Address</label>
+        <input type="text" id="contactFormAddress" class="" name="contact[Address]" placeholder="" autocorrect="off" autocapitalize="off" value="">
+        </div>
+
+        <div class="grid__item large--one-half medium--one-whole small--one-whole">
+        <label class="" for="contactFormAddress">Address Line2</label>
+        <input type="text" id="contactFormAddress" class="" name="contact[Address Line2]" placeholder="" autocorrect="off" autocapitalize="off" value="">
+        </div>
+        <div class="grid__item large--one-half medium--one-whole small--one-whole">
+        <label class="" for="contactFormAddress">Country</label>
+        <input type="text" id="contactFormAddress" class="" name="contact[Country]" placeholder="" autocorrect="off" autocapitalize="words" value="">
+        </div>
+
+        <div class="grid__item large--one-half medium--one-whole small--one-whole">
+        <label class="" for="contactFormAddress">STATE/PROVINCE/REGION</label>
+        <input type="text" id="contactFormAddress" class="" name="contact[STATE PROVINCE REGION]" placeholder="" autocorrect="off" autocapitalize="words" value="">
+        </div>
+
+        <div class="grid__item large--one-half medium--one-whole small--one-whole">
+        <label class="" for="contactFormAddress">City</label>
+        <input type="text" id="contactFormAddress" class="" name="contact[city]" placeholder="" autocorrect="off" autocapitalize="off" value="">
+        </div>
+
+        <div class="grid__item large--one-half medium--one-whole small--one-whole">
+        <label class="" for="contactFormAddress">ZIP/POSTAL CODE</label>
+        <input type="text" id="contactFormAddress" class="" name="contact[zipcode]" placeholder="" autocorrect="off" autocapitalize="words" value="">
+        </div>
+      
+	</div>
+
+  	<hr class="hr--clear hr--small">
+
+ 	<div class="grid--full text-center">
+    	<input type="submit" class="btn" value="{{ 'contact.form.send' | t }}">
+  	</div>
+{% endform %}

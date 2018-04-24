@@ -1,0 +1,150 @@
+<div id="personal-information">
+  <div class="tab-content" role="form">
+    <h3 class="head">Personal Information</h3>
+    <form name="personal-info" method="POST" id="personal-info" action="">
+      <div class="grid">
+        <div class="grid__item large--one-half no-pd">
+          <div class="form-group">
+            <label for="first_name" >First Name</label>
+            <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name">
+          	<input type="hidden" id="hidden_id" />
+          </div>
+          <span class="messageContainer"></span>
+          <a href="#" class="tooltipmain tool-tip" title="01" data-tipped-options="position: 'top'" tabindex="-1">?</a>
+        </div>
+        <div class="grid__item large--one-half">
+          <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name">
+          </div>
+          <span class="messageContainer"></span>
+          <a href="#" class="tooltipmain tool-tip" title="02" data-tipped-options="position: 'top'" tabindex="-1">?</a>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="grid__item large--one-half no-pd">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+          </div>
+          <span class="messageContainer"></span>
+          <a href="#" class="tooltipmain tool-tip" title="03" data-tipped-options="position: 'top'" tabindex="-1">?</a>
+        </div>
+        <div class="grid__item large--one-half">
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" name="address" placeholder="Address">
+          </div>
+          <span class="messageContainer"></span>
+          <a href="#" class="tooltipmain tool-tip" title="04" data-tipped-options="position: 'top'" tabindex="-1">?</a>
+        </div>
+        <div class="grid__item large--one-half no-pd">
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control" id="city" name="city" placeholder="City">
+          </div>
+          <span class="messageContainer"></span>
+          <a href="#" class="tooltipmain tool-tip" title="05" data-tipped-options="position: 'top'" tabindex="-1">?</a>
+        </div>
+        <div class="grid__item large--one-half">
+          <div class="form-group">
+            <label for="postal_code">Postal Code</label>
+            <input type="text" class="form-control" id="postal_code" name="postal_code" placeholder="Postal Code">
+          </div>
+          <span class="messageContainer"></span>
+          <a href="#" class="tooltipmain tool-tip" title="06" data-tipped-options="position: 'top'" tabindex="-1">?</a>
+        </div>
+        <div class="grid__item large--one-half no-pd">
+          <div class="form-group">
+            <label for="select-country">Country</label>
+            <select class="form-control select-country" id="select_country" placeholder="Country" name="country">
+              <option value="">SelectCountry</option>
+            </select>
+          </div>
+          <span class="messageContainer"></span>
+          <a href="#" class="tooltipmain tool-tip" title="07" data-tipped-options="position: 'top'" tabindex="-1">?</a>
+        </div>
+        <div class="grid__item large--one-half">
+          <div class="form-group">
+            <label for="country-state">State, Province, or Region</label>
+            <select class="form-control country-state" id="state" placeholder="State, Province, or Region">
+            </select>
+          </div>
+          <span class="messageContainer"></span>
+          <a href="#" class="tooltipmain tool-tip" title="08" data-tipped-options="position: 'top'" tabindex="-1">?</a>
+        </div>
+        <div class="clear"></div>
+        <button class="btn btn-primary submit-btn personal-info-submit" type="submit">SUBMIT</button>
+
+         <style type="text/css">
+
+          .form-control:focus {
+/*               border-color: #ff80ff; */
+              box-shadow: 0px 0px 2px 2px #0270bd;
+              
+            
+          }
+          </style>
+      </div>
+    </form>
+  </div>
+</div>
+<script>
+  
+$('#personal-info').validate({
+    errorElement: 'span',
+    rules: {
+        first_name: {
+            required: true,
+        },
+        last_name: {
+            required: true,
+        },
+        email: {
+            required: true,
+            pattern: "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[A-Z]{2}|com|org|net|edu|gov|mil|biz|info|mobi|name|aero|asia|jobs|museum|in)"
+        },
+        address: {
+            required: true,
+            minlength: 4
+        },
+        city: {
+            required: true,
+        },
+        postal_code: {
+            required: true,
+        },
+        country: {
+            required: true,
+        }
+
+    },
+    messages: {
+        first_name: {
+            required: "Please enter first name",
+        },
+        last_name: {
+            required: "Please enter last name",
+        },
+        email: {
+            required: "Please enter email",
+            pattern: "Please enter a valid email address"
+        },
+        address: {
+            minlength: "Address must be 4 character long",
+            required: "Please enter address"
+        },
+        postal_code: {
+            required: "Please enter postal code"
+        },
+        city: {
+            required: "Please enter city"
+        },
+        country: {
+            required: "Please select country"
+        }
+    }
+});
+    
+</script>
+

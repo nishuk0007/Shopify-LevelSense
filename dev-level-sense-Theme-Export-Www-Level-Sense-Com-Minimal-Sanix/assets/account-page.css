@@ -1,0 +1,1232 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+.row, .grid{
+  margin: 0;
+}
+.pd-none{
+  padding: 0;
+  width: 66%;
+}
+.no-pd {
+  padding: 0 !important;
+}
+.mt10{
+  margin-top: 10px;
+}
+.mt30{
+  margin-top: 0;
+}
+.clear {
+  clear: both;
+}
+ body > .tpd-tooltip {
+   max-width: 500px !important;
+   width: 100% !important;
+ }
+body .tpd-tooltip > div > div {
+  width: 100% !important;
+}
+
+ h4{
+  color: #333;
+  border-bottom: #ccc solid 1px;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+}
+ table{
+  font-size: 16px;
+  margin-top: 20px;
+}
+ table tbody td:not(:first-child),
+ table thead th:not(:first-child){
+  text-align: center;
+}
+ table tbody td:first-child{
+  width: 64%;
+}
+aside.level-sense .table-wrapper table {
+  margin-top: 0;
+}
+ a.popup-close{
+  background: #333 none repeat scroll 0 0;
+  border-radius: 100%;
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  height: 28px;
+  line-height: 26px;
+  position: absolute;
+  right: -6px;
+  text-align: center;
+  top: -6px;
+  width: 28px;
+}
+#underlay{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:#000;
+  -moz-opacity:0.5;
+    opacity:.50;
+    filter:alpha(opacity=50);
+}
+#lightbox-claimdevice, #lightbox-edit-device, #lightbox-edit-device-alarm, #lightbox-logs, #lightbox-notifypopup, #lightbox-alarm-log, #personal-information {
+  display:none;
+  position:absolute;
+  min-height:400px;
+  background-color:#fff;
+  padding: 20px 8px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.grid__item {
+  padding-left: 15px;
+}
+ .edit-content ul.nav.nav-pills li{
+  width: 100%;
+  /*border-radius: 5px;*/
+  border: none;
+  float: none;
+  background: #333;
+  margin-top: 2px;
+}
+ .edit-content ul.nav.nav-pills li.active{
+  background: #000;
+  border: none;
+}
+ .edit-content ul.nav.nav-pills li a{
+  display: block;
+  border: none;
+  color: #fff;
+}
+ .edit-content ul.nav.nav-pills li a:hover,
+ .edit-content ul.nav.nav-pills li.active a{
+  background: #000;
+  border: none;
+  border-radius: 0; 
+}
+ .edit-content .tab-content{
+  border: #ccc solid 1px;
+  /*border-radius: 10px; */
+  padding: 10px;
+  font-size: 16px;
+  line-height: 30px;
+}
+.claim-device-btn {
+  margin: 15px auto;
+  display: block;
+  width: 80%;
+}
+ .edit-content .tab-content .form-group input,
+ .edit-content .tab-content .form-group select{
+  border-radius: 0;
+  height: 50px;
+  
+}
+
+ .edit-content .tab-content .form-group label{
+  font-weight: normal;
+  position: absolute;
+  padding-left: 12px;
+  transform: translateY(12px);
+  opacity: 0;
+  transition: all ease-in-out 0.5s;
+  z-index: 1;
+
+}
+ .edit-content .tab-content .form-group.active label{
+  transform: translateY(-3px);
+  opacity: 1;
+}
+ .edit-content .tab-content .form-group.active input{
+  padding-top: 15px;
+}
+ .edit-content .tab-content fieldset[disabled=""] .form-group label{
+  opacity: 1;
+  transform: translateY(0px);
+}
+ .edit-content .tab-content fieldset[disabled=""] .form-group input{
+  padding-top: 23px;
+}
+.edit-content .tab-content fieldset[disabled=""]{
+  border: none;
+  padding: 0;
+}
+ .edit-content .tab-content hr{
+  margin: 0 0 5px;
+  border-color: #ddd;
+}
+ .edit-content .tab-content .checkbox{
+  margin: 0 15px 0 0;
+  display: inline-block;
+}
+
+ .edit-content .tab-content #alarmlogs hr{
+  margin: 16px 0;
+}
+.fancybox-overlay .fancybox-skin {
+  background: #fff;
+}
+.wordbreak {
+  word-wrap: break-word;
+}
+#account .wrapper {
+  overflow: visible;
+}
+#claimdevice .claim-head, #lightbox-notifypopup .notify-head, 
+#lightbox-logs .Device-Statics, #lightbox-alarm-log .Alarm-Logs, 
+#personal-information h3.head, #alarm-configuration .alarm-head > h3, 
+#device-detail .ddetls-head {
+  background: linear-gradient(to bottom, #f2f2f2 0%, #ddd 100%)
+}
+#claimdevice .claim-head h3, #lightbox-notifypopup .notify-head h3,
+#lightbox-logs .Device-Statics h3, #lightbox-alarm-log .Alarm-Logs h3, 
+#personal-information h3.head, #alarm-configuration h3, 
+#device-detail h3 {
+  text-align: center;
+  color: #0270C8;
+  margin-bottom: 10px;
+  padding: 12px;
+}
+#claimdevice .grid h5 {
+  margin: 0 0 10px;
+}
+#claimdevice .grid select {
+  border: 1px solid #aaa;
+  -webkit-appearance: menulist;
+  -moz-appearance: menulist;
+  appearance: menulist;
+}
+#claimdevice p {
+  margin-bottom: 10px;
+}
+#lightbox-edit-device .tab-panes {
+  border: 1px solid #7c7c7c;
+  padding: 10px;
+}
+#lightbox-edit-device .tabs {
+  margin-bottom: 0;
+}
+#lightbox-edit-device .tab-nav {
+  margin-right: 5px;
+  width: 23%;
+}
+#lightbox-edit-device .tab-nav li a {
+  font-size: 16px;
+  padding: 12px 16px
+}
+#personal-information .form-group select {
+  border: 1px solid #ccc;
+  width: 100%;
+  -webkit-appearance: menulist;
+  -moz-appearance: menulist;
+  appearance: menulist;
+  padding: 19px 14px;
+}
+#personal-information .grid .form-group label, 
+#device-detail .grid .form-group label {
+  margin-bottom: 0;
+}
+#personal-information .grid .form-group input, 
+#device-detail .grid .form-group input {
+  border: 1px solid #ccc;
+  padding: 20px 14px;
+  margin-bottom: 15px;
+}
+#personal-information .tab-content button.submit-btn {
+  margin: 15px auto 4px;
+  display: block;
+  padding: 14px 50px;
+}
+#device-detail fieldset {
+  border: none;
+  padding: 0;
+}
+#device-detail .tab-content .grid .update-pd {
+  padding: 0 2px;
+  margin: 20px 0;
+}
+#device-detail .grid .form-group input {
+  border: 1px solid #ccc;
+  padding: 16px 14px;
+}
+#device-detail .form-group select {
+  border: 1px solid #ccc;
+  width: 100%;
+  -webkit-appearance: menulist;
+  -moz-appearance: menulist;
+  appearance: menulist;
+}
+#alarm-configuration .tab-content p {
+  margin: 0;
+  text-align: center;
+  font-size: 18px;
+  color: #000;
+}
+#device-detail .tab-content hr, 
+#alarm-configuration .tab-content hr, 
+#lightbox-notifypopup .tab-content hr {
+  border-color: #ddd;
+  margin: 14px 0;
+}
+#alarm-configuration .form-group select, 
+#lightbox-notifypopup .form-group select, 
+#lightbox-alarm-log .form-group select {
+  height: 44px;
+  border-radius: 2px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  -webkit-appearance: menulist;
+  -moz-appearance: menulist;
+  appearance: menulist;
+}
+#alarm-configuration .chckbox {
+  text-align: center;
+  margin: 12px 0;
+}
+#lightbox-notifypopup .tab-content .chckbox {
+  text-align: left;
+  margin: 6px 0 0;
+}
+#alarm-configuration .chckbox input[type="checkbox"], 
+#lightbox-notifypopup .chckbox input[type="checkbox"] {
+  cursor: pointer;
+  position: relative;
+  opacity: 0;
+  z-index: 1;
+  height: 20px;
+  width: 20px;
+  top: 5px;
+}
+#alarm-configuration .chckbox input[type="checkbox"] + span, 
+#lightbox-notifypopup .chckbox input[type="checkbox"] + span {
+  background: #e5e5e5 none repeat scroll 0 0;
+  border-radius: 100%;
+  color: #e5e5e5;
+  display: inline-block;
+  font-size: 14px;
+  height: 20px;
+  line-height: 20px;
+  margin-left: 12px;
+  position: relative;
+  text-align: center;
+  width: 20px;
+  margin-right: 5px;
+}
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    -moz-appearance:textfield;
+}
+
+#alarm-configuration .chckbox input[type="checkbox"]:checked + span, 
+#lightbox-notifypopup .chckbox input[type="checkbox"]:checked + span {
+  background: #0270bd none repeat scroll 0 0;
+  color: #fff;
+}
+#lightbox-notifypopup .row{
+  margin: 10px 0;
+}
+#lightbox-notifypopup #notifypopup h5{
+  margin: 10px 0 0;
+}
+#lightbox-notifypopup #notifypopup form{
+  margin-bottom: 10px;
+}
+#lightbox-notifypopup #notifypopup .email-type, 
+#lightbox-notifypopup #notifypopup .sms-type{
+  border: 1px solid #ccc;
+  margin: 20px auto;
+  max-width: 100%;
+  padding: 5px 10px;
+  position: relative;
+}
+#lightbox-notifypopup .tab-content {
+  border: #ccc 1px solid;
+  padding: 10px;
+}
+#lightbox-notifypopup .tab-content h4 {
+  background: #fff none repeat scroll 0 0;
+  border: medium none;
+  display: inline-block;
+  left: 10px;
+  margin-bottom: 10px;
+  padding: 0 10px;
+  position: absolute;
+  top: -10px;
+}
+#lightbox-notifypopup .tab-content button.notify-add-btn, 
+#lightbox-notifypopup .tab-content button.notify-save-btn {
+  display: inline-block;
+    font-size: 18px;
+    height: 50px;
+    margin: 5px auto 8px;
+    max-width: 250px;
+  	width: 100%;
+}
+#lightbox-notifypopup .tab-content button.notify-btn {
+  margin-bottom: 0px;
+  margin-left: 10px;
+}
+
+#lightbox-notifypopup .form-group input {
+  height: 44px;
+  border-radius: 2px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  padding: 6px 15px;
+}
+#lightbox-notifypopup .tab-content h4 > input {
+  padding: 12px 10px;
+  background: #eee;
+  border: none;
+  color: #0261a4;
+}
+#lightbox-notifypopup .tab-content h4 > input[placeholder] {
+    color: #0261a4 !important;
+    ::-webkit-color: #0267a4 !important;
+  	:-ms-color: #0267a4 !important;
+  	::-moz-color: #0267a4 !important;
+}
+#lightbox-notifypopup .tab-content .new-contact {
+  display:none
+}
+#lightbox-notifypopup .tab-content .new-contact .large--one-third {
+  width: 33.33%;
+}
+
+#lightbox-alarm-log .grid .grid__item {
+  padding-left: 0;
+  
+}
+#lightbox-alarm-log .log-history {
+  margin-bottom: 15px;
+}
+.level-sense .grid h4 a.device-btn{
+  letter-spacing: 0;
+}
+body#account > .tpd-tooltip{
+/*   top: 520px !important; */
+  z-index: 999999999;
+}.accordion>ul>li>div
+body#account > .tpd-tooltip div{
+ border: none;
+}
+#personal-information .grid__item, 
+#alarm-configuration .grid__item, 
+#device-detail .grid__item{
+  position: relative;
+}
+a.tooltipmain {
+  border: 1px solid #999;
+  border-radius: 100%;
+  color: #999;
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+  height: 30px;
+  line-height: 28px;
+  position: absolute;
+  right: 20px;
+  text-align: center;
+  text-decoration: none;
+  top: 15px;
+  bottom: 10px;
+  width: 30px;
+  z-index: 9;
+/*   right: 5px;
+  top: 16px; */
+}
+#device-detail .grid a.tooltipmain{
+  bottom: 28px;
+}
+/* #personal-information .grid a.tooltipmain{
+  bottom: 28px;
+} */
+#device-detail .grid__item.update-pd a.tooltipmain{
+  bottom: 4px;
+  right: 24px;
+}
+#lightbox-edit-device .grid input, 
+#lightbox-edit-device .grid textarea, 
+#device-detail .grid .form-group input{
+  padding: 16px 0 16px 14px;
+}
+body#account > iframe#admin_bar_iframe{
+ z-index: 0 !important;
+}
+/* .fancybox-opened {
+   z-index: 9999999999;
+} */
+
+
+#lightbox-notifypopup .type-opt{
+  line-height: 34px;
+}
+#lightbox-notifypopup .accordion>ul>li>a{
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 1.28571em;
+  font-weight: bold;
+  padding: 0;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  margin-top: 0;
+  transition: all ease-in-out 0.5s;
+  -webkit-transition: all ease-in-out 0.5s;
+  -ms-transition: all ease-in-out 0.5s;
+}
+#lightbox-notifypopup .accordion>ul>li>a span.control-icon{
+  border: #888 solid 1px;
+  width: 28px;
+  height: 28px;
+  border-radius: 100%;
+  color: #888;
+  text-align: center;
+  float: right;
+}
+#lightbox-notifypopup .accordion>ul>li>a span.control-icon i{
+ line-height: 28px;
+}
+#lightbox-notifypopup .accordion>ul>li>a span.control-icon i.fa-minus, 
+#lightbox-notifypopup .accordion>ul>li.active>a span.control-icon i.fa-plus{
+ display: none;
+}
+#lightbox-notifypopup .accordion>ul>li>a span.control-icon i.fa-plus, 
+#lightbox-notifypopup .accordion>ul>li.active>a span.control-icon i.fa-minus{
+ display: block;
+}
+/* #lightbox-notifypopup .accordion>ul>li.active>a{
+  margin-top: -20px;
+} */
+#lightbox-notifypopup .accordion ul li a span{
+  display: inline-block;graph-data
+  background: #fff;
+  padding: 0px 6px;
+}
+#lightbox-notifypopup .accordion ul li a + div{
+  border: none;
+}
+#lightbox-notifypopup select.service_provider{
+/*   background: url("//cdn.shopify.com/s/files/1/1688/7319/t/2/assets/ico-select.svg?7283317613476148364") no-repeat 96% center; */
+  border: #ccc solid 1px;
+}
+#lightbox-notifypopup #notifypopup #new-contact{
+  padding: 20px 10px;
+}
+.device-tab {
+	border: 1px solid #ccc;
+}
+.device-tab .Device-Statics {
+	margin: 18px 24px 0;
+}
+#graph_area {
+	margin: 0 auto;
+  	width: 95%;
+}
+
+.highcharts-range-selector-buttons {
+/* 	display: none; */
+} 
+
+button.edit-device-info, button.edit-device-info-alarm {
+    display: block;
+    margin: 10px auto;
+    padding: 8px 28px;
+}
+
+#lightbox-edit-device-alarm .tabs {
+  margin: 0;
+}
+#lightbox-edit-device-alarm .tab-panes {
+	border: 1px solid #7c7c7c;	
+}
+#personal-information span.error {
+      position: absolute;
+      bottom: -8px;
+      color: red;
+}
+#contact_email span.error, #text_msg span.error, #contact-name span.error, #claim_device span.error {
+      color: red;
+}
+
+#edit_device_form_part2 input, #edit_device_form_part2 select {
+	font-weight:bold;
+  	-webkit-appearance: none;
+  	-ms-appearance: none;
+  	appearance: none;
+}
+
+form#edit_device_form_part2 div div.grid__item p span.percent{
+	font-weight:bold;
+}
+
+#lightbox-notifypopup .grid__item .tab-content .notify-head + section{
+    max-height: 338px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.device-state-normal {
+    color: #000;	
+}
+.device-state-alarm-offline {
+    color: #FF0000;	
+}
+.device-active-online {
+  color: #008000;  
+}
+#alarmlogs select {
+    max-width: 335px;
+}
+.alarm-log-record  {
+	padding: 10px 10px 10px 25px;
+    margin-bottom: 10px;
+}
+
+.current-temp li {
+    display: inline-block;
+}
+.current-temp li select {
+	border: 1px solid #7c7c7c;
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    margin: 0 0 1em;
+    color: #4c4c4c;
+    padding: 1.1rem 2.5rem;
+}
+.current-temp li:last-child {
+  margin-bottom: 15px !important;
+}
+.header-side-one {
+	max-width: 74%;
+  	width: 100%;
+}
+.header-side-two {
+	max-width: 26%;
+  	width: 100%;
+}
+.list-devices th:first-child {
+	width: 200px;
+}
+.list-devices td h6 {
+	display: inline-block;
+  	margin-bottom: 5px;
+}
+#temp_in_f, #temp_in_c {
+  	font-weight: 600;
+    margin-top: 5px;
+}
+#edit_device_form_part2 .current-temp select {
+	height: 60px;
+    border-radius: 0px;
+    margin-top: 0px;
+/*   	font-weight: 100; */
+  	-webkit-appearance: menulist;
+    -moz-appearance: menulist;
+    appearance: menulist;
+}
+#alarm-configuration .form-group select#leak_sensor_dropdown, 
+#alarm-configuration .form-group select#float_switch_label {
+  	height: 60px;
+    border-radius: 0px;
+    margin-top: 0px;
+    border: 1px solid #7c7c7c;
+    -webkit-appearance: menulist;
+    -moz-appearance: menulist;
+    appearance: menulist;
+}
+#leak_sensor_container .grid__item:first-child, 
+#float_switch_container .grid__item:first-child{
+	padding-left: 0;
+}
+p #leak_sensor_label, p #float_switch_label {
+ 	line-height: 55px; 
+}
+#edit_device_form_part1 a.tooltipmain {
+	top: 33px;
+}
+#personal-info a.tooltipmain {
+	top: 35px;
+}
+#update_interval_dropdown, #checkin_interval_dropdown {
+ 	height: 50px;
+}
+.wifi-signal-strength h5 {
+  	display: inline-block;
+  	margin-left: 60px;
+}
+.wifi-signal-strength h5 span {
+	margin-left: 20px;
+}
+p#wifi_signal_status {
+    margin: 0;
+    display: inline-block;
+}
+.degree-temp{
+    font-weight: 100;
+}
+
+.signal-excellent{
+	color: #18D34E;
+  	
+}
+
+.signal-good{
+	color: #1C5870;
+}
+
+.signal-fair{
+	color: #E6B65C;
+}
+
+.signal-poor{
+	color: #DD2332;
+}
+.graph-data {
+  float: right;
+  margin-right: 26px; 
+}
+.graph-data .graph-data-for-week {
+  margin-left: -7px;
+}
+
+.graph-button{
+  background:#0261a4;
+}
+.cal-group-btn {
+  padding: 15px 0;
+  position: relative;
+}
+
+.cal-group-btn .tr-lvl-cng-mrk:hover {
+  background: #000;
+  border: none;
+  border-radius: 0;
+}
+
+.wtr-lvl-cng-mrk{
+left: 60px;
+top: 20px !important;	
+}
+
+.accordion ul li div.desave-sec {
+  text-align: center;
+  border: none;
+}
+.loader {
+   position: fixed;
+   left: 0px;
+   top: 0px;
+   width: 100%;
+   height: 100%;
+   z-index: 10051;
+   background: url('//cdn.shopify.com/s/files/1/1688/7319/t/2/assets/loader.gif') 50% 30% no-repeat rgba(249,249,249,0.8);
+}
+.alarm-log-record .grid-details {
+   display: inline-block;
+   width: 100%;
+}
+#service_prov #service_provider_select {
+  border: 1px solid #aaa;
+  -webkit-appearance: menulist;
+  padding: 1.3rem 2.5rem;
+}
+.log-data {
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+#resend_otp p{
+	margin:0;
+}
+
+.accordion > ul > li.active > div{
+  	border:none;
+}
+
+.success-opt-msg{
+ 	font-size: 16px;
+}
+
+.siren-relay{
+    color: steelblue;
+    display: flex;
+}
+#water_level_change {
+  	width: 100%;
+	max-width: 110px;
+    display: inline-block;
+    border: 1px solid #ddd;
+    padding: 5px 16px;
+    line-height: 28px;
+    margin-bottom: 10;
+    font-size: 13px;
+    background: url("//cdn.shopify.com/s/files/1/1688/7319/t/2/assets/ico-select.svg?7283317613476148364") no-repeat 96% center;
+}
+.grid__item .large--one-half p {
+  margin: 1rem 0 2rem;
+}
+a.cal-down, a.cal-up {
+    width: 100%;
+    max-width: 90px;
+}
+
+
+
+/*  @media */
+
+
+@media screen and (min-width: 768px) and (max-width: 1023px){
+  #personal-information .grid .grid__item{
+    padding-left: 0;
+  }
+  .level-sense .grid h4 a.device-btn {
+   font-size: 20px;
+  }
+  .level-sense .table:not(.non-responsive) > thead{
+    width: 100%;
+  }
+  .level-sense .table:not(.non-responsive) > thead > tr {
+    display: flex;
+    width: 100%;
+  }
+  .level-sense .table:not(.non-responsive) > tbody {
+    display: inline-block;
+  }
+  .level-sense .table:not(.non-responsive) > thead > tr > th {
+    display: block;
+    width: 50%;
+  }
+  .level-sense .table:not(.non-responsive) > tbody > tr {
+    display: flex;
+  }
+  #service_provider_select{
+    width: 100%;
+    padding: 1.3rem 2.5rem;
+    margin: 0 0 1.5rem; 
+  }
+}
+
+
+
+@media screen and (max-width:767px) {
+  .fancybox-wrap, .fancybox-desktop, .fancybox-type-inline, .fancybox-opened {
+    top: 100px;
+  }
+  .pd-none {
+    padding: 0;
+    width: 100%;
+  }
+  .edit-content .tab-content .checkbox label {
+    margin-left: 18px;
+    padding-left: 40px;
+  }
+  .tab-content {
+    margin-top: 20px;
+  }
+  #lightbox-claimdevice .edit-content .grid__item {
+    padding-left: 0;
+  }
+  .level-sense .grid h4 a.device-btn {
+    display: block;
+  }
+  aside.level-sense .table-responsive {
+    overflow: auto;
+    width: 100%;
+  }
+  aside.level-sense table.table {
+    display: table;
+    width: 100%;
+  }
+  aside.level-sense table.table thead > tr > th, 
+  aside.level-sense table.table tbody > tr > td {
+    display: table-cell;
+    float: none;
+    font-size: 13px;
+    padding: 0.3rem 0.7rem;
+  }
+  aside.level-sense .table.list-devices>thead>tr>td {
+    font-size: 13px;
+    padding: 0.3rem 0.7rem;
+  }
+  aside.level-sense .table.list-devices>thead>tr>td a.btn {
+    padding: 10px 18px;
+  }
+  aside.level-sense table.table thead > tr {
+    display: inherit;
+    width: 100%;
+    float: none;
+  }
+  aside.level-sense table.table tbody, 
+  aside.level-sense table.table thead {
+    display: table;
+    float: none;
+    width: 100%;
+  }
+  .grid a.device-btn {
+    margin-bottom: 10px;
+    padding: 8px 5px;
+  }
+  aside.level-sense h4 {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 12px;
+  }
+  #lightbox-edit-device .tab-nav, #lightbox-edit-device .tab-panes {
+    width: 100%;
+  }
+  #lightbox-edit-device .tab-nav > li {
+    margin-bottom: 6px;
+  }
+  #alarm-configuration .tab-content .grid__item, 
+  #personal-information .tab-content .grid__item {
+    padding-left: 0;
+  }
+  #lightbox-notifypopup .grid__item {
+    padding-left: 0;
+  }
+  #alarm-configuration .form-group select {
+    margin-bottom: 10px;
+    margin-top: 0;
+  }
+  #lightbox-notifypopup .tab-content button.notify-add-btn, 
+  #lightbox-notifypopup .tab-content button.notify-save-btn {
+    margin-bottom: 10px;
+  }
+  #lightbox-notifypopup .tab-content .new-contact .large--one-third {
+    width: 100%;
+  }
+  .header-side-one {
+    max-width: 100%;
+    width: 100%;
+    padding-left: 0;
+  }
+  .header-side-two {
+    max-width: 100%;
+    width: 100%;
+  }
+  #lightbox-notifypopup .accordion ul li a span {
+    font-size: 0.7rem;
+    padding: 0px 3px;
+  } 
+  #lightbox-notifypopup .accordion>ul>li>a span.control-icon {
+    height: 18px;
+    margin-top: 8px;
+    width: 18px;
+  }
+  #lightbox-notifypopup .accordion>ul>li>a span.control-icon i {
+    line-height: 18px;
+  }
+  #personal-information h3.head, #device-detail h3 {
+    font-size: 1em;
+  }
+  #personal-information .grid .form-group input, 
+  #personal-information .form-group select, 
+  #device-detail .grid .form-group input, #device-detail .grid .form-group select {
+    padding: .3rem .5rem;
+    font-size: 0.8em;
+  }
+  #personal-information .grid a.tooltipmain {
+    bottom: 28px;
+    font-size: 12px;
+    height: 18px;
+    line-height: 16px;
+    right: 16px;
+    top: 27px;
+    width: 18px;
+  }
+  #device-detail .grid a.tooltipmain {
+    bottom: 28px;
+    font-size: 12px;
+    height: 18px;
+    line-height: 16px;
+    right: 16px;
+    top: 4px;
+    width: 18px;
+  }
+  #personal-information .grid .form-group label {
+    font-size: 13px;
+  }
+  #personal-information .tab-content button.submit-btn {
+    padding: 4px 20px;
+  }
+  #update_interval_dropdown, #checkin_interval_dropdown {
+    height: auto;
+  }
+  .input-span {
+    position: relative;
+  }
+  #device-detail .grid .form-group label {
+    font-size: 13px;
+  }
+  #device-detail .tab-content .grid .update-pd {
+    margin: 0;
+  }
+  .wifi-signal-strength h5 {
+    margin-left: 0;
+  }
+  #device-detail .grid__item.update-pd a.tooltipmain {
+    right: 16px;
+  }
+  #claimdevice .claim-head h3, #lightbox-notifypopup .notify-head h3, 
+  #lightbox-logs .Device-Statics h3, #lightbox-alarm-log .Alarm-Logs h3, 
+  #personal-information h3.head, #alarm-configuration h3, #device-detail h3 {
+    font-size: 1em;
+  }
+  .edit-content .tab-content {
+    padding: 4px;
+  }
+  .alarm-log-record {
+    padding: 10px;
+    font-size: 13px;
+  }
+  #lightbox-alarm-log {
+    padding: 8px;
+  }
+  #lightbox-alarm-log .tab-content {
+    margin-top: 0;
+  }
+  #lightbox-alarm-log .log-history {
+    margin-bottom: 0;
+  }
+  #notifypopup .accordion-content {
+    padding: 0;
+  }
+  #lightbox-notifypopup #notifypopup .email-type {
+    margin: 0 auto 10px;
+    padding: 0 4px;
+  }
+  #list_conatct_id .column {
+    padding-left: .5rem;
+    padding-right: .5rem;
+  }
+  #list_conatct_id input, #list_conatct_id select {
+    padding: 5px;
+    font-size: 12px;
+  }
+  #lightbox-notifypopup .form-group select {
+    height: auto;
+  }
+  #lightbox-notifypopup #notifypopup h5 {
+    margin: 10px 0 6px 0;
+    font-size: small;
+  }
+  .desave-sec button {
+    padding: 2px 6px;
+    font-size: 1em;
+  }
+  #notifypopup .accordion {
+    margin: 0;
+  }
+  #service_prov #service_provider_select {
+    border: 1px solid #aaa;
+    -webkit-appearance: menulist;
+    padding: .3rem;
+  }
+  #lightbox-notifypopup #list_conatct_id .row {
+    margin: 0 0 14px 0;
+  }
+  
+  #lightbox-notifypopup #list_conatct_id h5 {
+    margin: 0 0 4px 0;
+  }
+  #notifypopup .email-type.active .desave-sec {
+    margin-bottom: 10px;
+  }
+  #lightbox-notifypopup .chckbox input[type="checkbox"] + span {
+    font-size: 12px;
+    height: 16px;
+    line-height: 17px;
+    width: 16px;
+  }
+  #lightbox-notifypopup .tab-content .chckbox {
+    margin: 0;
+  }
+  #temp_text .form-group, #temp_voice .form-group, #temp_email .form-group {
+    margin: 10px 0px;
+  }
+  #lightbox-notifypopup .form-group input {
+    height: auto;
+  }
+  
+				/*   lightbox-edit-device-alarm */
+  
+  #lightbox-edit-device-alarm {
+    padding: 4px;
+  }
+  #lightbox-edit-device-alarm .tab-panes {
+    padding: 10px;
+  }
+  #alarm-configuration .tab-content p {
+    font-size: 13px;
+  }
+  #edit_device_form_part2 .current-temp li select, 
+  #edit_device_form_part2 .form-group input, 
+  #leak_sensor_container input, #float_switch_container input, 
+  #float_switch_container select {
+    padding: .5rem 2rem .5rem .4rem;
+    font-size: 0.8em;
+    height: auto;
+  }
+  #edit_device_form_part2 .form-group {
+    margin-bottom: 10px;
+  }
+  #edit_device_form_part2 a.tooltipmain {
+  	font-size: 15px;
+    height: 20px;
+    line-height: 21px;
+    right: 20px;
+    top: 7px;
+    bottom: 0;
+    width: 20px;
+  }
+  .current-temp li:last-child {
+    margin-bottom: 0 !important;
+  }
+  #alarm-configuration .chckbox {
+    font-size: 12px;
+  }
+  #alarm-configuration .chckbox input[type="checkbox"] + span {
+    margin-left: 2px;
+    font-size: 12px;
+    height: 16px;
+    line-height: 16px;
+    margin-left: 2px;
+    width: 16px;
+    margin-right: 5px;
+  }
+  #alarm-configuration .form-group select#leak_sensor_dropdown, 
+  #alarm-configuration .form-group select#float_switch_dropdown {
+    font-size: 0.8em;
+    height: auto;
+  }
+  #leak_sensor_container .grid__item.medium--one-third:nth-child(1), 
+  #float_switch_container .grid__item.medium--one-third:nth-child(1) {
+    width: 60%;
+  }
+  #leak_sensor_container .grid__item.medium--one-third:nth-child(2),
+  #float_switch_container .grid__item.medium--one-third:nth-child(2) {
+    width: 30%;
+  }
+  #leak_sensor_container .grid__item.medium--one-third:nth-child(3), 
+  #float_switch_container .grid__item.medium--one-third:nth-child(3) {
+    margin-top: 10px;
+  }
+  p #leak_sensor_label, p #float_switch_label {
+    line-height: 2;
+  }
+  #leak_sensor_container input[type="checkbox"], 
+  #float_switch_container input[type="checkbox"] {
+    padding: 2px;
+  }
+  button.edit-device-info-alarm {
+    padding: 4px 20px;
+  }
+  .sweet-alert h2 {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .sweet-alert button {
+    font-size: 14px;
+    margin: 16px 5px 0 5px;
+    padding: 10px 18px;
+  }
+ 
+  
+	/*   Device-Statics */
+  
+  .device-tab .Device-Statics {
+    margin: 4px 4px 0;
+  }
+  #devicestatics .graph-data {
+    margin-right: 0;
+    text-align: center;
+    float: none;
+  }
+  a.cal-down, a.cal-up {
+    padding: 5px 13px;
+  }
+  .edit-content #devicestatics .form-group p {
+    margin: 0; 	
+  }
+  
+  a.reset-cal {
+    font-size: 0.8em;
+    padding: 8px 6px;
+    margin: 8px 0;
+  }
+  #graph_area {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .log-data {
+    text-align: center;
+  }
+  .log-data a.btn {
+    padding: 4px 6px;
+    font-size: 13px;
+  }
+  #water_level_change {
+/* 	max-width: 100%; */
+/*     margin-bottom: 10px; */
+  }
+  a.cal-down, a.cal-up {
+      max-width: 100%;
+   	  margin-bottom: 10px; 	
+  }
+  .graph-data~.grid__item { 
+  	padding-right: 15px!important;
+  }
+  a.reset-cal {
+  	width: 100%;
+  }
+}
+
+.help-block {
+	font-size: 13px;
+    display: block;
+}
+
+.mobile-error {
+	font-size: 13px;
+  
+}
+
+
+
+
+/* @media screen and (max-width: 767px){
+ .level-sense .grid h4 a.device-btn {
+    display: block;
+  }  
+}*/
+
+/*
+@media screen and (max-width:412px) {
+  .edit-content .tab-content .checkbox label {
+    margin-left: 12px;
+    padding-left: 16px;
+  }
+}
+@media screen and (max-width:414px) {
+  .edit-content .tab-content .checkbox label {
+    margin-left: 10px;
+    padding-left: 20px;
+  }
+}
+@media screen and (max-width:417px) {
+  .edit-content .tab-content .checkbox label {
+    margin-left: 10px;
+    padding-left: 25px;
+  }
+}*/

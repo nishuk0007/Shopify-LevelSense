@@ -1,0 +1,183 @@
+<div id="lightbox-edit-device">
+   <div class="tabs">
+      <div class="tab-panes">
+         <div id="device-detail" class="active">
+           	<div class="grid__item large--one no-pd ddetls-head">
+	            <h3>Device Detail</h3>	
+          	</div>
+            <div class="tab-content">
+               <form id="edit_device_form_part1">
+                  <div class="grid">
+                     <div class="grid__item no-pd">
+                        <fieldset>
+                           <div class="form-group">
+                              <label for="exampleInputEmail1">Device Name</label>
+                              <div class="input-span">
+                                <input type="text" class="form-control" id="displayNameInput" placeholder="Name Your Device" name="displayName">
+                              	<a href="#" class="tooltipmain tool-tip" title="001" data-tipped-options="position: 'top'">?</a>
+                              </div>  
+                           </div>
+                           
+                        </fieldset>
+                     </div>
+                  </div>
+
+                  <div class="grid">
+                     <div class="grid__item large--one-half update-pd">
+                        <div class="form-group">
+                           <label for="exampleInputEmail1">Have my device send a status update every:</label>
+                          <div class="input-span">
+                           <select class="form-control" value="300" name="update_interval" id="update_interval_dropdown">
+<!--                               <option value="120">2 Minutes</option>
+                              <option value="180">3 Minutes</option>
+                              <option value="240">4 Minutes</option>
+                              <option value="300" selected>5 Minutes</option> -->
+                           </select>
+                          <a href="#" class="tooltipmain tool-tip" title="002" data-tipped-options="position: 'top'">?</a>
+                          </div>
+                        </div>
+                        
+                     </div>
+                     <div class="grid__item large--one-half update-pd">
+                        <div class="form-group">
+                           <label for="exampleInputEmail1">Contact me if my device doesn't report for:</label>
+                          <div class="input-span">
+                           <select class="form-control" name="checkin_interval" value = "" label="" id="checkin_interval_dropdown">
+<!--                               <option value="15">15 Minutes</option>
+                              <option value="30">30 Minutes</option>
+                              <option value="60" selected>1 Hour</option>
+                              <option value="120">2 Hours</option>
+                              <option value="240">4 Hours</option>
+                              <option value="480">8 Hours</option>
+                              <option value="960">16 Hours</option>
+                              <option value="1440">1 Day</option> -->
+                           </select>                          
+                          <a href="#" class="tooltipmain tool-tip" title="003" data-tipped-options="position: 'top'">?</a>
+                          </div>
+                        </div>
+                        
+                     </div>
+                  </div>
+
+                  <div class="grid">
+                     <div class="grid__item no-pd">
+                        <fieldset disabled>
+                           <div class="form-group">
+                             
+                              <label for="exampleInputEmail1">Firmware Version</label>
+                             <div class="input-span">
+                              <input type="text" class="form-control disabled" id="firmwareVersionInput">
+                             <a href="#" class="tooltipmain tool-tip" title="004" data-tipped-options="position: 'top'">?</a>
+                             </div>
+                           </div>
+                           
+                        </fieldset>
+                     </div>
+                  </div>
+
+                  <div class="grid">
+                     <div class="grid__item no-pd">
+                        <fieldset disabled>
+                           <div class="form-group">
+                             
+                              <label for="exampleInputEmail1">Subscription Expiration</label>
+                             <div class="input-span">
+                              <input type="text" class="form-control disabled" id="subscriptionExpirationInput">
+                             <a href="#" class="tooltipmain tool-tip" title="005" data-tipped-options="position: 'top'">?</a>
+                             </div>
+                           </div>
+                           
+                        </fieldset>
+                     </div>
+                  </div>
+
+                  <div class="grid">
+                     <div class="grid__item no-pd">
+                        <fieldset disabled>
+                           <div class="form-group">
+                              <label for="exampleInputEmail1">Mac Address</label>
+                             <div class="input-span">
+                              <input type="text" class="form-control disabled" id="macAddressInput">
+                             <input type="hidden" name="device_id" id="form_devicedetail_id">
+                          	<a href="#" class="tooltipmain tool-tip" title="006" data-tipped-options="position: 'top'">?</a>
+                             </div>
+                           </div>
+ 
+                        </fieldset>
+                     </div>
+                  </div>
+
+                  <div class="grid">
+                     <div class="grid__item no-pd">
+                        <fieldset disabled>
+                           <div class="form-group">
+                              <label for="exampleInputEmail1">Last Checkin</label>
+                             	<div class="input-span">
+                              <input type="text" class="form-control disabled" id="lastCheckinInput" placeholder="">
+                              <a href="#" class="tooltipmain tool-tip" title="006" data-tipped-options="position: 'top'">?</a>
+                             </div>
+                           </div>
+                          
+                        </fieldset>
+                     </div>
+                  </div>
+                 
+                  <div class="grid">
+                     <div class="grid__item no-pd">
+                        <fieldset disabled>
+                           <div class="form-group">
+                             <label class="wifi-signal-strength" for="">Wireless Signal Strength in dBm(decibel-milliwatts):<h5 class="">STATUS:<p id="wifi_signal_status"></p></h5></label>
+                             <div class="input-span">
+                              <input type="text" class="form-control disabled" id="signal_strength" placeholder="">
+                             <a href="#" class="tooltipmain tool-tip" title="006" data-tipped-options="position: 'top'">?</a>
+                             </div>
+                           </div>
+                           
+                        </fieldset>
+                     </div>
+                  </div>
+                 
+
+                 <div class="grid">
+                   	 <div class="grid__item large--one-half update-pd">
+                        <div class="form-group">
+                          <div class="siren-relay"><label for="">Current State of Siren:&nbsp&nbsp</label><div id="siren_on_off"></div></div>
+                          <div class="input-span">
+                           <input type="text" class="from-control disable" name="sirenState" id="sirenStateInput" placeholder="">
+                          <a href="#" class="tooltipmain tool-tip" title="007" data-tipped-options="position: 'top'">?</a>
+                          </div>
+                        </div>
+                        
+                     </div>
+                   
+                   
+                     <div class="grid__item large--one-half update-pd">
+                        <div class="form-group">
+                          <div class="siren-relay"><label for="">Current state of Relay:&nbsp&nbsp</label><div id="relay_on_off"></div></div>
+                          <div class="input-span">
+                           <input type="text" class="from-control disable" name="relayState" id="relayStateInput">	
+                          <a href="#" class="tooltipmain tool-tip" title="008" data-tipped-options="position: 'top'">?</a>
+                          </div>
+                        </div>
+                        
+                     </div>
+                 </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+   <button class="btn btn-primary edit-device-info">Submit</button>	
+</div>
+
+
+{{ 'core.min.css' | asset_url | stylesheet_tag }}
+{{ 'timber.master.min.js' | asset_url | script_tag }}
+
+<style>
+  .tab-panes .tab-content > form{
+  	display: block !important;
+  }
+
+</style>
+

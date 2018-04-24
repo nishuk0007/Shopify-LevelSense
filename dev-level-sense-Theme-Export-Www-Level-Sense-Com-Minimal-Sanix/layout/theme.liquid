@@ -1,0 +1,187 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie9 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+
+  <!-- Basic page needs ================================================== -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  {% if settings.favicon_enable %}
+  <link rel="shortcut icon" href="{{ 'favicon.png' | asset_url }}" type="image/png" />
+  {% endif %}
+
+  <!-- Title and description ================================================== -->
+  <title>
+  {{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+  </title>
+
+  {% if page_description %}
+  <meta name="description" content="{{ page_description | escape }}">
+  {% endif %}
+
+  <!-- Product meta ================================================== -->
+  {% include 'open-graph-tags' %}
+  {% include 'twitter-card' %}
+
+  <!-- Helpers ================================================== -->
+  <link rel="canonical" href="{{ canonical_url }}">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="{{ settings.color_primary }}">
+  
+  {{ '//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js' | script_tag }}
+  {{ '//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css' | stylesheet_tag }}
+
+  <!-- CSS ================================================== -->
+  {{ 'timber.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'jquery.fancybox.css' | asset_url | stylesheet_tag }}
+  {{ 'jquery.fancybox-buttons.css' | asset_url | stylesheet_tag }}
+  {{ 'sweetalert.css' | asset_url | stylesheet_tag }}
+  {{ '//opensource.keycdn.com/fontawesome/4.6.3/font-awesome.min.css ' | stylesheet_tag }}
+ 
+  
+  {% include 'google-fonts' %}
+  
+  <!-- Header hook for plugins ================================================== -->
+  {{ content_for_header }}
+
+  {% include 'oldIE-js' %}
+  
+  {{ '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js' | script_tag }}
+  {{ 'modernizr.min.js' | asset_url | script_tag }}
+  {{ 'jquery.validate.js' | asset_url | script_tag }}
+  {{ 'additional-methods.js' | asset_url | script_tag }}
+  
+  {{ 'jquery.fancybox.pack.js' | asset_url | script_tag }}
+  {{ 'jquery.fancybox-buttons.js' | asset_url | script_tag }}
+  {{ 'sweetalert.min.js' | asset_url | script_tag }}
+
+
+
+  {% comment %}
+    If you store has customer accounts disabled, you can remove the following JS file
+  {% endcomment %}
+  {% if template contains 'customers' %}
+    {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+  {% endif %}
+  
+  {{ 'account-page.css' | asset_url | stylesheet_tag }}
+ 
+  </head>
+
+<body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
+
+  {% include 'header-bar' %} 
+  
+  {% include 'header' %}
+
+   <main class="main-content" role="main">
+    <div class="{% if template == 'index' %}grid{%else%}wrapper{%endif%}">
+        <div class="">
+          {{ content_for_layout }}
+        </div>
+    </div>
+  </main>
+  
+  {% include 'footer' %}
+
+  
+  
+  {% for i in (1..4) %}
+    {% capture home_section %}home_section_{{ i }}{% endcapture %}
+    {% if settings[home_section] == 'slider' %}
+      {% assign slider_home_enable = true %}
+    {% endif %}
+  {% endfor %}
+  
+    {{ 'jquery.flexslider.min.js' | asset_url | script_tag }}
+    {{ 'slider.js' | asset_url | script_tag }}
+  
+<script type="text/javascript">
+$(document).ready(function($) {
+  
+  $('#flexslider_thumbnail').flexslider({
+    animation: "slide",
+    itemWidth:300,
+    minItems: 3,
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    itemWidth: 210,
+  });
+  
+});
+</script>
+  
+
+  {{ 'fastclick.min.js' | asset_url | script_tag }}
+  {{ 'timber.js' | asset_url | script_tag }}
+  {{ 'theme.js' | asset_url | script_tag }}
+  
+  {% if template contains 'product' %}
+    {% if settings.product_image_zoom_type == 'lightbox'  %}
+      {{ 'magnific-popup.min.js' | asset_url | script_tag }}
+    {% elsif settings.product_image_zoom_type == 'zoom-in' %}
+      {{ 'jquery.zoom.min.js' | asset_url | script_tag }}
+    {% endif %}
+  {% endif %}
+
+  {% if template contains 'article' or template contains 'product' %}
+    {% if settings.social_sharing_blog or settings.social_sharing_products %}
+      {{ 'social-buttons.js' | asset_url | script_tag }}
+    {% endif %}
+  {% endif %}
+{% include 'ajaxify-cart' %}
+  
+  <script type="text/javascript">
+    // Initialize BASE URL
+    if({{settings.debug}}){
+      var BASE_URL = "{{settings.dev_url}}";
+    }else{
+      var BASE_URL = "{{settings.dash_url}}";
+    }
+    
+    $(document).on('click', '#customer_logout_link', function(e){
+      var obj={};
+      var logout_link = $(this);
+      e.preventDefault();
+      obj['sessionKey'] = window.localStorage.getItem('user-token');
+      $.ajax({
+        url: BASE_URL+"/api/v1/logout",
+        type: 'POST',
+        data: JSON.stringify(obj),
+        dataType: 'json',
+        crossDomain:true,
+        async:true,
+        contentType: 'application/json; charset=utf-8',
+        success: function (result) {
+          window.localStorage.setItem('user-token', '');
+          window.location.href = logout_link.attr('href');
+        },
+        error: function (error) {
+        }
+      });
+    });
+    
+    
+	var url = 'https://dev-level-sense.myshopify.com/products/level-sense-pro.json';
+	window.localStorage.setItem('url', url);
+
+    function getproductjson(url){
+      $.ajax({
+             url: url,
+             dataType: 'json',
+             success: function(data) {
+                var items = [];
+             },
+ 
+          });
+	}
+    getproductjson(url);
+  </script>
+</body>
+</html>

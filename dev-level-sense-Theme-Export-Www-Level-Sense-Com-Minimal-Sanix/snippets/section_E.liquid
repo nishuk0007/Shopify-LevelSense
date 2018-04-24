@@ -1,0 +1,28 @@
+<section class="section_E">
+  <div class="wrapper">
+    
+    <div class="grid--full text-center">
+      
+      <h3>Buy Level Sense Pro now for $149.95</h3>
+      
+      <p>First two years of service included - FREE!<br/>
+      
+         Annual service only $9.95/year.</p>
+      
+      <a href="//www.level-sense.com/cart/19130226758:{% if cart.item_count > 0 %}{% for item in cart.items %}{{item.quantity}}{%endfor%}{% else %}1{% endif %}">
+      <button type="submit" class="btn">
+         <span>Buy Now</span>
+      </button>
+      </a>
+
+
+{%comment%}      {% for product in collections.pro.products %}
+	<form method="post" action="/cart/add">
+      <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+      <input type="submit" value="Buy now" id="add-to-cart" class="btn" />
+    </form>  
+      {% endfor %}{%endcomment%} 
+    </div>
+    
+  </div>
+</section>

@@ -1,0 +1,61 @@
+ <div id="lightbox-logs">
+  <div class="grid edit-content">
+    <div class="tab-pane fade" id="devicestatics">   
+      <div class="grid__item large--one no-pd">
+        <div class="grid__item large--one no-pd device-tab">
+          <div class="Device-Statics">
+            <h3>Device Statics</h3>
+          </div>
+          <div class="graph-data">
+    			<div class="form-group">
+       				<a class="btn btn-primary graph-data-for-today" value='' data-devid="" id="today">Today</a>
+       				<a class="btn btn-primary graph-data-for-week" value='' data-devid="" id="week">Week</a>
+                  	<input type="hidden" value="" id ='graph_data_range'/>
+    			</div>
+          </div>
+          <div id="graph_area"></div>
+          
+          <div class="grid__item large--one-half">
+    		<div class="form-group">
+       			<p>Raise or Lower the Top Line of the Water Level Graph</p>
+    		</div>
+ 		   </div>
+ 			<div class="grid__item large--one-half">
+    			<div class="form-group cal-group-btn">
+                   	
+                     <select id="water_level_change">
+                  		<option value=10 selected> 10% </option>
+                  		<option value=100 > 100% </option>
+                  		<option value=200> 200% </option>
+                     </select>    
+                  
+                     <a href="#" class="tooltipmain tool-tip wtr-lvl-cng-mrk" title= " If your graph is solid blue, this means your water level is over 100% use the SHRINK button in 100% and 10% increments until the peak water level arrives at about 40%. In the case that you overcompensate and the water level is too low, use the GROW function to move the water level back-up the Chart." data-tipped-options="position: 'top'">?</a>
+                  
+                    <a class="btn btn-primary cal-down">Grow </a>
+       				<a class="btn btn-primary cal-up">Shrink </a>
+                  	<input type="hidden" id="cal_id" value="" />
+    			</div>
+           </div>
+          
+          <div class="grid__item large--one no-pd">
+
+            <div class="grid__item large--one-half">
+              <div class="form-group">
+                <p>Current Relay State: Off</p>
+              </div>
+            </div>
+            <div class="grid__item large--one-half">
+              <div class="form-group">
+                <a class="btn btn-primary reset-cal">RE-INITIATE DEPTH CALIBRATION</a>
+              </div>
+            </div>
+          </div>
+          
+<!--	<hr> -->
+           
+          
+      </div> 
+        
+        </div>
+  </div>
+</div>

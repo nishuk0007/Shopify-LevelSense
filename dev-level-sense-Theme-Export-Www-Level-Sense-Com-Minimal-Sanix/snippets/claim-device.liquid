@@ -1,0 +1,116 @@
+<div id="lightbox-claimdevice">
+  <div class="grid edit-content">
+    <div class="grid__item">
+      <!-- Tab panes -->
+      <div class="tab-content mt30">
+        <div class="tab-pane fade" id="claimdevice">
+          <div class="claim-head">
+            <h3>Claim Device</h3>
+          </div>  
+          <p>
+            After connecting your Level Sense Pro to Wi-Fi, the LED bar will start flashing an LED claim code. This is a unique color combination used to link your device to your account in the Level Sense Portal. Use the drop down boxes to select your claim code and click claim.
+          </p>
+          <p class="text-center">
+            <img class="img-responsive" src="{{ 'ClaimCode-300x88.png' | asset_url }}" alt="Device Image"/>
+          </p>
+          <p>
+            Note: In some cases, white can appear with a yellow tint. If claiming fails, try using white instead of yellow. A good reference for white is to reset the device and notice the LED flash at startup, this is white.
+          </p>
+          <p>
+            <strong>Select your colour codes - </strong>
+          </p>
+          <form id="claim_device">
+          <div class="grid">
+            
+            <div class="grid__item large--one-quarter mt10 no-pd">
+              <h5>POWER</h5>
+              <select class="form-control power" name="select_power">
+                <option value="" selected>-----</option>
+                <option value="1">Red</option>
+                <option value="2">White</option>
+                <option value="3">Yellow</option>
+                <option value="4">Green</option>
+                <option value="5">Blue</option>
+                <option value="6">Purple</option>
+              </select>
+            </div>
+            <div class="grid__item large--one-quarter mt10">
+              <h5>CLOUD</h5>
+              <select class="form-control cloud" name="select_cloud">
+                <option value="" selected>-----</option>
+                <option value="1">Red</option>
+                <option value="2">White</option>
+                <option value="3">Yellow</option>
+                <option value="4">Green</option>
+                <option value="5">Blue</option>
+                <option value="6">Purple</option>
+              </select>
+            </div>
+            <div class="grid__item large--one-quarter mt10">
+              <h5>CALIBRATE</h5>
+              <select class="form-control calibrate" name="select_calibrate">
+                <option value="" selected>-----</option>
+                <option value="1">Red</option>
+                <option value="2">White</option>
+                <option value="3">Yellow</option>
+                <option value="4">Green</option>
+                <option value="5">Blue</option>
+                <option value="6">Purple</option>
+              </select>
+            </div>
+            <div class="grid__item large--one-quarter mt10">
+              <h5>ALARM</h5>
+              <select class="form-control alarm" name="select_alarm">
+                <option value="" selected>-----</option>
+                <option value="1">Red</option>
+                <option value="2">White</option>
+                <option value="3">Yellow</option>
+                <option value="4">Green</option>
+                <option value="5">Blue</option>
+                <option value="6">Purple</option>
+              </select>
+            </div>
+            
+          </div>
+          
+            <button type="submit" class="btn btn-primary claim-device-btn">Claim Device</button>
+         </form>
+          <p>Please allow up to five minutes for synchronization to occur the first time after clicking claim.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script> 
+  $('#claim_device').validate({
+    errorElement: 'span',
+    rules: {
+      select_power: {
+        required: true
+      },
+      select_cloud: {
+        required: true
+      },
+      select_calibrate: {
+        required: true
+      },
+      select_alarm: {
+        required: true
+      },
+    },
+    messages: {
+      select_power: {
+        required: "Please select power"
+      },
+      select_cloud: {
+        required: "Please select cloud"
+      },
+      select_calibrate: {
+        required: "Please select calibrate"
+      },
+      select_alarm: {
+        required: "Please select alarm"
+      },
+    }
+  });
+</script>
